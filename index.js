@@ -1,13 +1,13 @@
 const objPlato = {
-  nombre: "Cebiche Peruano",
+  nombre: "Arroz chaufa Peruano",
   calificacion: 3,
   caracteristicas: {
     preparacion: 30,
-    coccion: 30,
+    temperatura: 100,
     calorias: 350,
-    temperatura: 5
+    porciones: 2
   },
-  imagen: "",
+  imagen: "chaufa.png",
   ingredientes: [
     "1 taza de arroz cocido (175 gramos)",
     "200 gramos de carne picada (puede ser pechuga de pollo, carne de res o de soya)",
