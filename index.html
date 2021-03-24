@@ -27,15 +27,11 @@
 		<main class="contenedor">
 			<section class="plato">
 				<figure class="plato__img">
-					<img src="http://placehold.it/250X150" alt="">
+					<img :src="'img/'+objPlato.imagen" alt="">
 				</figure>
-				<h1 class="plato__nombre">Nombre del plato</h1>
+				<h1 class="plato__nombre"></h1>
 				<div class="plato__stars">
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
-					<i class="fas fa-star"></i>
+					<i class="fas fa-star" v-for="(n,index) in objPlato.calificacion" :key="index"></i>
 				</div>
 				<div class="plato__features">
 					<div class="plato__feature">
@@ -43,7 +39,7 @@
 							<i class="fas fa-clock"></i> Preparación
 						</h4>
 						<p class="value">
-							30 mins
+							{{objPlato.caracteristicas.preparacion}} mins
 						</p>
 					</div>
 					<div class="plato__feature">
@@ -51,16 +47,15 @@
 							<i class="fas fa-fire"></i> Calorias
 						</h4>
 						<p class="value">
-							175
+							{{objPlato.caracteristicas.calorias}}
 						</p>
 					</div>
 					<div class="plato__feature">
 						<h4 class="feature">
 							<i class="fas fa-temperature-high"></i> Temperatura
-
 						</h4>
 						<p class="value">
-							120 &#8451;
+							{{objPlato.caracteristicas.temperatura}} &#8451;
 						</p>
 					</div>
 					<div class="plato__feature">
@@ -68,37 +63,28 @@
 							<i class="fas fa-user-friends"></i> Porciones
 						</h4>
 						<p class="value">
-							5
+							{{objPlato.caracteristicas.porciones}}
 						</p>
 					</div>
 				</div>
-				<plato class="plato__about">
+				<div class="plato__about">
 					<div class="plato__ingredientes">
 						<h3>Ingredientes</h3>
 						<ul class="plato__ingredientes-lista">
-							<li class="plato__ingrediente">
-								<span>01</span>
-								<p>Cebolla</p>
-							</li>
-							<li class="plato__ingrediente">
-								<span>01</span>
-								<p>Cebolla</p>
-							</li>
-							<li class="plato__ingrediente">
-								<span>01</span>
-								<p>Cebolla</p>
+							<li class="plato__ingrediente" v-for="(ingrediente, index) in objPlato.ingredientes" :key="index">
+								<p>{{ingrediente}}</p>
 							</li>
 						</ul>
 					</div>
 					<div class="plato__preparacion">
 						<h3>Preparación</h3>
 						<ol class="plato__preparacion">
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
+							<li v-for="(paso, index) in objPlato.preparacion" :key="index">
+								{{paso}}
+							</li>
 						</ol>
 					</div>
-				</plato>
+				</div>
 			</section>
 
 		</main>
