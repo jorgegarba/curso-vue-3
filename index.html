@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<script src="https://unpkg.com/vue@next"></script>
+	<link rel="stylesheet" href="./index.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div id="root">
+		<header class="header">
+			<figure class="header__logo">
+				<img src="./img/logo.png" alt="">
+			</figure>
+			<div class="header__auth">
+				<button>Iniciar Sesión</button>
+			</div>
+		</header>
+
+		<main class="contenedor">
+			<section class="plato">
+				<figure class="plato__img">
+					<img src="http://placehold.it/250X150" alt="">
+				</figure>
+				<h1 class="plato__nombre">Nombre del plato</h1>
+				<div class="plato__stars">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="plato__features">
+					<div class="plato__feature">
+						<h4 class="feature">
+							<i class="fas fa-clock"></i> Preparación
+						</h4>
+						<p class="value">
+							30 mins
+						</p>
+					</div>
+					<div class="plato__feature">
+						<h4 class="feature">
+							<i class="fas fa-fire"></i> Calorias
+						</h4>
+						<p class="value">
+							175
+						</p>
+					</div>
+					<div class="plato__feature">
+						<h4 class="feature">
+							<i class="fas fa-temperature-high"></i> Temperatura
+
+						</h4>
+						<p class="value">
+							120 &#8451;
+						</p>
+					</div>
+					<div class="plato__feature">
+						<h4 class="feature">
+							<i class="fas fa-user-friends"></i> Porciones
+						</h4>
+						<p class="value">
+							5
+						</p>
+					</div>
+				</div>
+				<plato class="plato__about">
+					<div class="plato__ingredientes">
+						<h3>Ingredientes</h3>
+						<ul class="plato__ingredientes-lista">
+							<li class="plato__ingrediente">
+								<span>01</span>
+								<p>Cebolla</p>
+							</li>
+							<li class="plato__ingrediente">
+								<span>01</span>
+								<p>Cebolla</p>
+							</li>
+							<li class="plato__ingrediente">
+								<span>01</span>
+								<p>Cebolla</p>
+							</li>
+						</ul>
+					</div>
+					<div class="plato__preparacion">
+						<h3>Preparación</h3>
+						<ol class="plato__preparacion">
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit sequi nesciunt voluptate </li>
+						</ol>
+					</div>
+				</plato>
+			</section>
+
+		</main>
+
+
+	</div>
+	<script src="./index.js"></script>
+</body>
+
+</html>
