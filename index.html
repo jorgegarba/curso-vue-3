@@ -25,36 +25,72 @@
         <button class="btn-danger" v-else>Cerrar Sesión</button>
       </div>
     </header>
-    <main class="container">
-      <div class="curso">
-        <figure class="curso__imagen">
-          <p class="curso__descuento" v-if="curso.descuento > 0">
-            {{curso.descuento}}%
-          </p>
+    <main class="main">
+      <section class="seleccionado">
+        <h3>Curso Seleccionado</h3>
+        <figure class="seleccionado__img">
           <img src="./assets/vue.png" alt="">
         </figure>
-        <div class="curso__info">
-          <h4>{{curso.nombre}}</h4>
-          <p class="curso__descripcion">
-            {{curso.descripcion}}
-          </p>
-          <div class="curso__caracteristicas">
-            <span>
-              <i class="fas fa-clock"></i> {{curso.duracion}} horas
-            </span>
-            <span>
-              <i class="fas fa-money-check "></i> {{curso.precio}} dólares
-            </span>
-            <span class="disponible" v-if="curso.disponible">disponible</span>
-            <span class="no-disponible" v-else>no disponible</span>
+        <h4 class="seleccionado__title">Curso avanzado de Vue3</h4>
+        <p class="seleccionado__desc">
+          magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio,
+          commodi odit! Eveniet?
+        </p>
+        <p class="seleccionado__disponible">
+          <span class="disponible">Disponible</span>
+        </p>
+        <p class="seleccionado__horas">
+          <span>
+            <i class="fas fa-clock"></i> 35 horas
+          </span>
+        </p>
+        <p class="seleccionado__precio">
+          <span>
+            <i class="fas fa-money-check "></i> 35 dólares
+          </span>
+        </p>
+      </section>
+      <section class="cursos">
+        <div class="curso" v-for="curso in cursos" :key="curso.nombre">
+          <figure class="curso__imagen">
+            <p class="curso__descuento" v-if="curso.descuento">
+              {{curso.descuento}}%
+            </p>
+            <img :src="'./assets/'+curso.imagen" alt="">
+          </figure>
+          <div class="curso__info">
+            <h4>{{curso.nombre}}</h4>
+            <p class="curso__descripcion">
+              {{curso.descripcion}}
+            </p>
+            <div class="curso__caracteristicas">
+              <span>
+                <i class="fas fa-clock"></i> {{curso.duracion}} horas
+              </span>
+              <span>
+                <i class="fas fa-money-check "></i> {{curso.precio}} dólares
+              </span>
+              <span class="disponible" v-if="curso.disponible">disponible</span>
+              <span class="no-disponible" v-else>no disponible</span>
+            </div>
           </div>
           <div class="curso__acciones">
             <button class="btn__comprar btn-success">
               <i class="fas fa-shopping-cart"></i>
             </button>
           </div>
+
         </div>
-      </div>
+      </section>
+      <section class="carrito">
+        <h3>Carrito</h3>
+        <ul class="carrito__lista">
+          <li>
+            <h5>Curso avanzado de Vue3</h5>
+            <p><strong>Precio:</strong><span>$ 40.00</span></p>
+          </li>
+        </ul>
+      </section>
     </main>
   </div>
 
