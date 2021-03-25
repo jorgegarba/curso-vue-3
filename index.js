@@ -1,55 +1,3 @@
-let curso = {
-  nombre: "Curso avanzado de Vue3",
-  duracion: "50",
-  disponible: true,
-  precio: 40,
-  descuento: 20,
-  imagen: "vue.png",
-  descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
-}
-
-let cursos = [
-  {
-    id: 30,
-    nombre: "Curso avanzado de Vue3",
-    duracion: 50,
-    disponible: true,
-    precio: 40,
-    descuento: 20,
-    imagen: "vue.png",
-    descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
-  },
-  {
-    id: 13,
-    nombre: "Curso básico de reactjs",
-    duracion: 20,
-    disponible: false,
-    precio: 40,
-    descuento: 0,
-    imagen: "react.png",
-    descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
-  },
-  {
-    id: 450,
-    nombre: "Curso definitivo de Webpack",
-    duracion: 30,
-    disponible: true,
-    precio: 40,
-    descuento: 10,
-    imagen: "webpack.png",
-    descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
-  },
-  {
-    id: 12,
-    nombre: "Crea tu servidor web con NodeJS",
-    duracion: 15,
-    disponible: true,
-    precio: 35,
-    descuento: 5,
-    imagen: "node.png",
-    descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
-  },
-]
 
 
 const App = {
@@ -57,6 +5,7 @@ const App = {
     return {
       cursos: [
         {
+          id: 14,
           nombre: "Curso avanzado de Vue3",
           duracion: 50,
           disponible: true,
@@ -66,24 +15,27 @@ const App = {
           descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
         },
         {
+          id: 4,
           nombre: "Curso básico de reactjs",
           duracion: 20,
           disponible: false,
-          precio: 40,
+          precio: 38,
           descuento: 0,
           imagen: "react.png",
           descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
         },
         {
+          id: 5,
           nombre: "Curso definitivo de Webpack",
           duracion: 30,
           disponible: true,
-          precio: 40,
+          precio: 50,
           descuento: 10,
           imagen: "webpack.png",
           descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
         },
         {
+          id: 154,
           nombre: "Crea tu servidor web con NodeJS",
           duracion: 15,
           disponible: true,
@@ -92,9 +44,27 @@ const App = {
           imagen: "node.png",
           descripcion: " magnam illo? Eos explicabo consequuntur nesciunt ex nostrum ipsam, porro nulla, consectetur iste distinctio, commodi odit! Eveniet?"
         },
-      ]
+      ],
+      auth: true,
+      cursoSeleccionado: null,
+      carrito: []
     }
-  }
+  },
+  methods: {
+    cambiarSesion: function () {
+      this.auth = !this.auth
+    },
+    seleccionarCurso: function (curso) {
+      this.cursoSeleccionado = { ...curso };
+    },
+    agregarCarrito: function (objCurso) {
+
+      if (!this.carrito.find(curso => objCurso.id === curso.id)) {
+        this.carrito.push(objCurso);
+
+      }
+    }
+  },
 }
 
 Vue.createApp(App).mount("#root");
