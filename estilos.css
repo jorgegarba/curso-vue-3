@@ -38,12 +38,20 @@ body {
 
 .header__auth button {
   padding: 0.5rem;
-  border: 1px solid indigo;
   border-radius: 5px;
   background-color: white;
-  color: indigo;
   outline: none;
   cursor: pointer;
+}
+
+.btn-success {
+  border: 1px solid green;
+  color: green;
+}
+
+.btn-danger {
+  border: 1px solid #b80000;
+  color: #b80000;
 }
 
 .container {
@@ -53,6 +61,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .curso__caracteristicas {
@@ -95,6 +104,29 @@ body {
 
 .curso__imagen {
   position: relative;
+}
+
+.curso__acciones {
+  margin-top: .5rem;
+}
+
+.curso__acciones .btn__comprar {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: green;
+  border: 1px solid green;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #b80000;
+  border: 1px solid #b80000;
+  color: white;
 }
 
 .disponible {

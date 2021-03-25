@@ -18,36 +18,40 @@
   <div id="root">
     <header class="header">
       <figure class="header__logo">
-        <img src="./assets/logo.png" alt="">
+        <img src="./assets/vue.png" alt="">
       </figure>
       <div class="header__auth">
-        <span>Jorge Garnica</span>
-        <button>Iniciar Sesión</button>
+        <button class="btn-success" v-if="!auth">Iniciar Sesión</button>
+        <button class="btn-danger" v-else>Cerrar Sesión</button>
       </div>
     </header>
     <main class="container">
       <div class="curso">
         <figure class="curso__imagen">
-          <p class="curso__descuento">
-            10%
+          <p class="curso__descuento" v-if="curso.descuento > 0">
+            {{curso.descuento}}%
           </p>
           <img src="./assets/vue.png" alt="">
         </figure>
         <div class="curso__info">
-          <h4>Curso de Vue</h4>
+          <h4>{{curso.nombre}}</h4>
           <p class="curso__descripcion">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, quis. Quos autem voluptatum omnis repellendus
-            perspiciatis unde
+            {{curso.descripcion}}
           </p>
           <div class="curso__caracteristicas">
             <span>
-              <i class="fas fa-clock"></i> 35 horas
+              <i class="fas fa-clock"></i> {{curso.duracion}} horas
             </span>
             <span>
-              <i class="fas fa-money-check "></i> 40 dólares
+              <i class="fas fa-money-check "></i> {{curso.precio}} dólares
             </span>
-            <span class="disponible">disponible</span>
-            <span class="no-disponible">no disponible</span>
+            <span class="disponible" v-if="curso.disponible">disponible</span>
+            <span class="no-disponible" v-else>no disponible</span>
+          </div>
+          <div class="curso__acciones">
+            <button class="btn__comprar btn-success">
+              <i class="fas fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
