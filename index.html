@@ -73,8 +73,11 @@
               <span>
                 <i class="fas fa-money-check "></i> {{curso.precio}} dólares
               </span>
-              <span class="disponible" v-if="curso.disponible">disponible</span>
-              <span class="no-disponible" v-else>no disponible</span>
+              <span :class="{disponible: curso.disponible, 'no-disponible':!curso.disponible}">
+                {{curso.disponible ? 'disponible':'no disponible'}}
+              </span>
+
+
             </div>
           </div>
           <div class="curso__acciones" v-if="curso.disponible">

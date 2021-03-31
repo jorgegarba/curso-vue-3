@@ -2,6 +2,7 @@
 
 const App = {
   data: function () {
+    console.log("data");
     return {
       cursos: [
         {
@@ -64,7 +65,7 @@ const App = {
 
       }
     }
-  },
+  }
 }
 
 Vue.createApp(App).mount("#root");
