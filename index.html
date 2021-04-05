@@ -54,8 +54,11 @@
         <p v-else>Ningún curso seleccionado</p>
       </section>
       <section class="cursos">
-        <div class="curso" v-for="curso in cursos" :key="curso.nombre" @click="seleccionarCurso(curso)">
-          <figure class="curso__imagen">
+        <div class="curso" :class="{
+          'curso-disponible': curso.disponible,
+          'curso-no-disponible': !curso.disponible 
+        }" v-for="curso in cursos" :key="curso.nombre" @click="seleccionarCurso(curso)">
+          <figure class="curso__imagen" :style="{padding:'8px'}">
             <p class="curso__descuento" v-if="curso.descuento">
               {{curso.descuento}}%
             </p>
@@ -73,7 +76,8 @@
               <span>
                 <i class="fas fa-money-check "></i> {{curso.precio}} dólares
               </span>
-              <span :class="{disponible: curso.disponible, 'no-disponible':!curso.disponible}">
+              <span :class="{disponible: curso.disponible, 'no-disponible':!curso.disponible}"
+                :style="{fontSize:'0.8rem'}">
                 {{curso.disponible ? 'disponible':'no disponible'}}
               </span>
             </div>
