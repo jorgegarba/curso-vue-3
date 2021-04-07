@@ -21,6 +21,7 @@
         <img src="./assets/vue.png" alt="">
       </figure>
       <div class="header__auth">
+        <strong>Total</strong> ${{total.toFixed(2)}}
         <button class="btn-success" v-if="!auth" @click="cambiarSesion">Iniciar Sesión</button>
         <button class="btn-danger" v-else @click="cambiarSesion">Cerrar Sesión</button>
       </div>
@@ -100,6 +101,9 @@
         </ul>
         <div v-else style="text-align: center;">
           <small>No hay cursos en el carrito</small>
+        </div>
+        <div class="carrito__total">
+          <strong>Total</strong> <span> ${{total.toFixed(2)}}</span>
         </div>
       </section>
     </main>

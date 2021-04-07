@@ -64,8 +64,25 @@ const App = {
         this.carrito.push(objCurso);
 
       }
+    },
+    // no usar el siguiente método ya que es muy costoso!
+    totalMethod() {
+      let total = this.carrito.reduce((prevValue, objCurso) => {
+        return prevValue + objCurso.precio
+      }, 0);
+      return total
     }
-  }
+  },
+  computed: {
+    // el valor de la variable computada "total" es más eficiente que el metodo "totalMethod"
+    total() {
+      let total = this.carrito.reduce((prevValue, objCurso) => {
+        return prevValue + objCurso.precio
+      }, 0);
+
+      return total
+    }
+  },
 }
 
 Vue.createApp(App).mount("#root");
