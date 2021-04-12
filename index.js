@@ -85,4 +85,5 @@ const App = {
   },
 }
 
-Vue.createApp(App).mount("#root");
+const MyAplicacion = Vue.createApp(App);
+

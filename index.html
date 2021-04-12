@@ -16,16 +16,7 @@
 
 <body>
   <div id="root">
-    <header class="header">
-      <figure class="header__logo">
-        <img src="./assets/vue.png" alt="">
-      </figure>
-      <div class="header__auth">
-        <strong>Total</strong> ${{total.toFixed(2)}}
-        <button class="btn-success" v-if="!auth" @click="cambiarSesion">Iniciar Sesión</button>
-        <button class="btn-danger" v-else @click="cambiarSesion">Cerrar Sesión</button>
-      </div>
-    </header>
+    <componente-header></componente-header>
     <main class="main">
       <section class="seleccionado">
         <h3>Curso Seleccionado</h3>
@@ -111,6 +102,10 @@
 
 
   <script src="./index.js"></script>
+  <script src="./componentes/Header.js"></script>
+  <script>
+    MyAplicacion.mount("#root");
+  </script>
 </body>
 
 </html>
