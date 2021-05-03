@@ -85,5 +85,5 @@ const App = {
   },
 }
 
-const MyAplicacion = Vue.createApp(App);
+const MiAplicacion = Vue.createApp(App);
 
