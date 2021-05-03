@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="root">
+
+    <button @click="getUsers">Traer Usuarios</button>
+
+    <hr>
+    <h4 v-if="cargando===true">Cargando...</h4>
+    <table v-else border="1">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Email</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="objUsuario in usuarios" :key="objUsuario.id">
+          <td>{{objUsuario.id}}</td>
+          <td>{{objUsuario.email}}</td>
+          <td>{{objUsuario.first_name}}</td>
+          <td>{{objUsuario.last_name}}</td>
+          <td>
+            <img :src="objUsuario.avatar" :alt="objUsuario.first_name">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
